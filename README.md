@@ -43,13 +43,22 @@ This project was developed as part of the **ITI Graduation Project**.
 
 ```plaintext
 Controllers/
-  - AdminController.cs
-  - AuthorController.cs
+  - RoleController.cs
+  - HomeController.cs
   - AccountController.cs
+  -Entities/
+  - AuthorController.cs
+  - PostController.cs
+  - DepartmentController.cs
 Models/
   - ApplicationUser.cs
-  - BlogPost.cs
-  - Comment.cs
+  - ErrorViewModel.cs
+  -Entities/
+  - Author.cs
+  - Post.cs
+  - Department.cs
+  -Context/
+   -BlogDbContext.cs
 Views/
   - Admin/
   - Author/
