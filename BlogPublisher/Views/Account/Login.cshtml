@@ -1,0 +1,45 @@
+﻿@model WebApplication1.ViewModel.LoginUserViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('@Url.Content("~/img/login s.jpg")'); background-size: cover; background-position: center;">
+    <div class="col-md-3">
+        <!-- Card component -->
+        <div class="card ">
+            <div class="card-header text-center">
+                Login
+            </div>
+            <div class="card-body">
+                <form method="post" asp-action="Login" asp-controller="Account">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group mt-4 mb-4">
+                        <label asp-for="UserName" class="control-label"></label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-4 mb-4">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group form-check mt-4 mb-4">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                        </label>
+                    </div>
+                    <div class="form-group mt-4 mb-4">
+                        <input type="submit" value="Login" class="btn btn-dark w-100" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End of card component -->
+    </div>
+</div>
+
+@section Scripts {
+   @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

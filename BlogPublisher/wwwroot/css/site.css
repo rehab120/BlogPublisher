@@ -1,0 +1,78 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.home-background {
+    background-image: url('/img/home-bg.jpg'); /* Change to the actual path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center center; /* Center the image */
+    min-height: 150vh; /* Ensures the background takes up the full height */
+}
+
+.navbar-brand {
+    padding-top: var(--bs-navbar-brand-padding-y);
+    padding-bottom: var(--bs-navbar-brand-padding-y);
+    margin-right: var(--bs-navbar-brand-margin-end);
+    font-size: var(--bs-navbar-brand-font-size);
+    color: var(--bs-navbar-brand-color);
+    white-space: nowrap;
+}
+
+.background-container {
+    background-image: url('/img/home-bg.jpg'); /* Adjust to the correct path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center center; /* Center the image */
+    min-height: 150vh; /* Ensures it takes up at least the full viewport height */
+}
+
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.8); /* Optional: Semi-transparent background for the navbar */
+    backdrop-filter: blur(10px); /* Optional: Adds a blur effect to the navbar */
+}
+
+.masthead {
+    min-height: 100vh; /* Full height of the viewport */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Align items in a column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center text */
+    background: url('/img/home-bg.jpg') no-repeat center center;
+    /* Optional: Background image */
+    background-size: cover; /* Optional: Cover the entire area */
+}
+
+.color-custom {
+    background: rgba(47, 6, 150, 0.8); /* Optional: Semi-transparent background for the navbar */
+    backdrop-filter: blur(10px); /* Optional: Adds a blur effect to the navbar */
+}
+
+.card:hover {
+    background-color: #e9ecef; /* Slightly darker gray */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Adds a shadow on hover */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+.container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}

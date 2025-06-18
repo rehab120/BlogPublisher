@@ -1,0 +1,47 @@
+﻿@using WebApplication1.Models.Entites
+
+@model List<Department>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col color-custom">#</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">Name</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">CreateTime</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">Count of Author</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr data-id="@i.Id">
+                <th scope="row">@i.Id</th>
+                <td>@i.Name</td>
+                <td>@i.CreateTime</td>
+                <td>@i.author.Count()</td>
+                @* <td>
+            @if (i.author != null && i.author.Any())
+            {
+            <ul>
+            @foreach (var author in i.author)
+            {
+            <li>@author.Name</li>
+            }
+            </ul>
+            }
+            else
+            {
+            <p>No authors</p>
+            }
+            </td>  *@
+                <td><a href="/Department/Edit/@i.Id" class="btn btn-link " style="color: rgba(47, 6, 150, 0.8);">Edit</a></td>
+                <td><a href="/Department/Delete/@i.Id" class="btn btn-link " style="color: rgba(47, 6, 150, 0.8);" data-id="@i.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="d-flex justify-content-end">
+    <a href="/Department/Create"><button type="button" class="btn btn-primary color-custom">Add New Department</button></a>
+</div>

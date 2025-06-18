@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebApplication1.Models.Entites.Post>
+
+    @if(@User.Identity.IsAuthenticated == true)
+{
+    <form asp-action="FindPost" method="post" class=" mt-3 mb-3 d-flex justify-content-center align-items-center w-100">
+        <label for="type" class="sr-only"> </label>
+        <input type="text" name="type" class="form-control" placeholder="Enter post type" value="@ViewData["type"]" style="max-width: 600px; margin-right: 8px;" />
+        <button type="submit" class="btn btn-dark">Search</button>
+    </form>
+}
+
+
+

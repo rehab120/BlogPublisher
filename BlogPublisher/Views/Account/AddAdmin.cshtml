@@ -1,0 +1,28 @@
+﻿@model WebApplication1.ViewModel.RegisterUserViewModel
+
+@{
+    ViewData["Title"] = "AddAdmin";
+}
+
+<div class="content-container mt-2 mb-2" style="background-image: url('@Url.Content("~/img/regist s.jpg")'); background-size: cover; background-position: center; padding: 50px;">
+    <div class="container">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Add New Admin</h1>
+                </div>
+                <div class="card-body">
+                    <form asp-action="AddAdmin">
+                        <partial name="_RegisterViewPartial" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,50 @@
+﻿@using WebApplication1.Models.Entites
+
+@model Post
+@{
+    SelectList listItems = new SelectList(ViewBag.Author, "Id", "Name");
+}
+<h1>Create New Post</h1>
+<form method="post" asp-asp-controller="Post" asp-action="Create">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Type">Post Type</label>
+        <input asp-for="Type" class="form-control">
+        <span asp-validation-for="Type" class="text-danger"></span>
+
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="CreateTime">Post CreateTime</label>
+        <input asp-for="CreateTime" class="form-control">
+        <span asp-validation-for="CreateTime" class="text-danger"></span>
+
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Descripation">Post Descripation</label>
+        <input asp-for="Descripation" class="form-control">
+        <span asp-validation-for="Descripation" class="text-danger"></span>
+
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Image">Post Image</label>
+        <input asp-for="Image" class="form-control">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Author_id">Author_Name</label>
+        <select asp-for="Author_id" asp-items="listItems" class="form-select">
+        </select>
+    </div>
+
+
+    <div class="d-flex justify-content-start">
+        <button type="submit" value="Create" class="btn btn-primary color-custom">Submit</button>
+    </div>
+
+</form>
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

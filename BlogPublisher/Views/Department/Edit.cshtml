@@ -1,0 +1,23 @@
+﻿@using WebApplication1.Models.Entites
+
+@model Department
+<h1>Edit Department</h1>
+<form method="post" asp-asp-controller="Department" asp-action="Edit" ,asp-route-id="@Model.Id">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Name">Department Name</label>
+        <input asp-for="Name" class="form-control">
+        <span asp-validation-for="Name" class="text-danger"></span>
+
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="CreateTime">Department CreateTime</label>
+        <input asp-for="CreateTime" class="form-control">
+        <span asp-validation-for="CreateTime" class="text-danger"></span>
+        <button type="submit" value="Edit" class="btn btn-primary mt-3 color-custom">Submit</button>
+</form>
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

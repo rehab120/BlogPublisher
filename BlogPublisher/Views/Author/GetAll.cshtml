@@ -1,0 +1,39 @@
+﻿@using WebApplication1.Models.Entites
+
+@model List<Author>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col color-custom">#</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">Name</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">EmailAddress</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">BirthDate</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">Gender</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">Salary</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">Address</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">department Name</th>
+            <th scope="col" style="color: rgba(47, 6, 150, 0.8);">Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr data-id="@i.Id">
+                <th scope="row">@i.Id</th>
+                <td>@i.Name</td>
+                <td>@i.EmailAddress</td>
+                <td>@i.BirthDate</td>
+                <td>@i.Gender</td>
+                <td>@i.Salary</td>
+                <td>@i.Address</td>
+                <td>@(i.department != null ? i.department.Name : "No Department")</td>
+
+                <td><a href="/Author/GetById/@i.Id" class="btn btn-link " style="color: rgba(47, 6, 150, 0.8);">Details</a></td>
+                <td><a href="/Author/Delete/@i.Id" class="btn btn-link " style="color: rgba(47, 6, 150, 0.8);" data-id="@i.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+ 

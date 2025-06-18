@@ -1,0 +1,57 @@
+﻿@using WebApplication1.Models.Entites
+
+
+@model IEnumerable<Post>
+
+    <partial name="_SearchViewPartial" />
+<div class="row">
+    @foreach (var i in Model)
+    {
+        <div class="col-md-4 mb-4 mt-4 d-flex align-items-stretch" data-id="@i.Id">
+            <div class="card h-100" style="width: 100%; background-color: #f8f9fa;">
+                <img class="card-img-top" src="~/img/@i.Image" alt="Card">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">@i.Type</h5>
+                    <p class="card-text">
+                        @{
+                            var shortDescription = i.Descripation.Length > 100
+                            ? i.Descripation.Substring(0, 100) + "..."
+                            : i.Descripation;
+                        }
+                        @shortDescription
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        Author : @string.Join(", ", i.Author.Name)
+                    </li>
+                    <li class="list-group-item">@i.CreateTime</li>
+                </ul>
+                <div class="card-footer mt-auto">
+                    <a href="/Post/GetById/@i.Id" class="btn btn-link" style="color: rgba(47, 6, 150, 0.8);">Read More</a>
+                    @if (@User.IsInRole("Admin"))
+                    {
+                        <a href="/Post/Delete/@i.Id" class="btn btn-link" style="color: rgba(47, 6, 150, 0.8);" data-id="@i.Id">Delete</a>
+
+                    }
+                </div>
+
+            </div>
+        </div>
+    }
+
+</div>
+@if (@User.IsInRole("Admin") || @User.IsInRole("Author"))
+{
+    <div class="d-flex justify-content-end mt-4">
+        <a href="/Post/Create">
+            <button type="button" class="btn btn-primary color-custom">Add New Post</button>
+        </a>
+    </div>
+}
+
+
+
+
+
+

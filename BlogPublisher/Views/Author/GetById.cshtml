@@ -1,0 +1,21 @@
+﻿@using WebApplication1.Models.Entites
+
+@model Author
+<div class="card" style="width: 25rem;">
+    <div class="card-body">
+        <h5 class="card-title"> Name : @Model.Name</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Address : @Model.Address</li>
+        <li class="list-group-item">BirthDate : @Model.BirthDate</li>
+        <li class="list-group-item">Gender : @Model.Gender</li>
+        <li class="list-group-item"> Salary : @Model.Salary</li>
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link" style="color: rgba(47, 6, 150, 0.8);">@Model.EmailAddress</a>
+    </div>
+    <div class="d-flex justify-content-start">
+        <a href="/Author/Edit/@Model.Id" class="btn btn-link" style="color: rgba(47, 6, 150, 0.8);">Edit</a>
+    </div>
+</div>
+</div>
